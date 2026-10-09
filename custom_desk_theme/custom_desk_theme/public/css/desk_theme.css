@@ -1,0 +1,269 @@
+/* ==========================================================================
+   FRAPPE 16 BACKEND THEME - CORE STYLES & DESIGN SYSTEM SYSTEM
+   Theme: Modern Obsidian & Soft Glassmorphism
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+/* --- Root CSS Variables (Frappe Desk Tokens Overrides) --- */
+:root {
+    --font-stack: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --heading-font-stack: 'Outfit', 'Inter', sans-serif;
+    
+    /* Color Palette - Indigo & Purple Glass */
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --primary-light: rgba(99, 102, 241, 0.15);
+    --accent-glow: rgba(99, 102, 241, 0.35);
+    
+    --bg-color: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.75);
+    --modal-bg: #1e293b;
+    --sidebar-bg: #090d16;
+    --navbar-bg: rgba(15, 23, 42, 0.85);
+    
+    --text-color: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(99, 102, 241, 0.4);
+    
+    --control-bg: rgba(15, 23, 42, 0.6);
+    --control-bg-hover: rgba(30, 41, 59, 0.9);
+    
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+    
+    --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 25px rgba(99, 102, 241, 0.25);
+    --glass-blur: blur(12px);
+}
+
+/* Global Typography & Font Overrides */
+body, html, .frappe-card, .form-control, button, input, select, textarea {
+    font-family: var(--font-stack) !important;
+}
+
+h1, h2, h3, h4, h5, h6, .page-head .title-text {
+    font-family: var(--heading-font-stack) !important;
+    letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.25);
+    border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* ==========================================================================
+   1. NAVBAR STYLING (Top Bar)
+   ========================================================================== */
+.navbar {
+    background: var(--navbar-bg) !important;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--border-color) !important;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.navbar .navbar-brand {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text-color) !important;
+    letter-spacing: -0.01em;
+}
+
+/* Search Bar in Navbar */
+.navbar .search-bar input,
+.search-bar .awesomplete input {
+    background: var(--control-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-full) !important;
+    color: var(--text-color) !important;
+    padding-left: 2.2rem !important;
+    transition: all 0.25s ease !important;
+}
+
+.navbar .search-bar input:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: var(--shadow-glow) !important;
+    background: var(--control-bg-hover) !important;
+}
+
+/* ==========================================================================
+   2. DESK SIDEBAR (Left Navigation)
+   ========================================================================== */
+.desk-sidebar, .layout-side-section {
+    background: var(--sidebar-bg) !important;
+    border-right: 1px solid var(--border-color) !important;
+    padding-top: 1rem;
+}
+
+.sidebar-item, .desk-sidebar .sidebar-item {
+    border-radius: var(--radius-md) !important;
+    margin: 4px 10px !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.sidebar-item a, .desk-sidebar .sidebar-item .sidebar-item-label {
+    color: var(--text-muted) !important;
+    font-weight: 500;
+    padding: 8px 12px !important;
+}
+
+.sidebar-item:hover {
+    background: var(--primary-light) !important;
+    transform: translateX(4px);
+}
+
+.sidebar-item:hover a, .sidebar-item:hover .sidebar-item-label {
+    color: #ffffff !important;
+}
+
+.sidebar-item.selected, .sidebar-item.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)) !important;
+    box-shadow: var(--shadow-glow) !important;
+}
+
+.sidebar-item.selected a, .sidebar-item.selected .sidebar-item-label {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+/* Workspace section headers */
+.sidebar-section-head {
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    opacity: 0.7;
+    padding: 12px 16px 4px 16px;
+}
+
+/* ==========================================================================
+   3. PAGE HEADER & BREADCRUMBS
+   ========================================================================== */
+.page-head {
+    background: transparent !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding: 1rem 1.5rem !important;
+}
+
+.page-head .title-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color) !important;
+}
+
+/* Primary Action Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1, #4f46e5) !important;
+    border: none !important;
+    border-radius: var(--radius-md) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    padding: 7px 18px !important;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3) !important;
+    transition: all 0.25s ease !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5) !important;
+}
+
+.btn-default, .btn-secondary {
+    background: var(--control-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-color) !important;
+    border-radius: var(--radius-md) !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn-default:hover, .btn-secondary:hover {
+    border-color: var(--border-hover) !important;
+    background: var(--control-bg-hover) !important;
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   4. CARDS, WORKSPACE WIDGETS & FORM CONTAINERS
+   ========================================================================== */
+.frappe-card, .widget, .form-page, .dashboard-widget {
+    background: var(--card-bg) !important;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--shadow-soft) !important;
+    transition: all 0.3s ease !important;
+}
+
+.frappe-card:hover, .widget:hover {
+    border-color: var(--border-hover) !important;
+}
+
+/* Form Controls & Inputs */
+.form-control, .input-with-feedback {
+    background: var(--control-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-md) !important;
+    color: var(--text-color) !important;
+    padding: 8px 12px !important;
+    transition: all 0.2s ease !important;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25) !important;
+    background: var(--control-bg-hover) !important;
+}
+
+/* Tables & Grid Rows */
+.grid-row, .frappe-list .list-row {
+    border-bottom: 1px solid var(--border-color) !important;
+    transition: background 0.15s ease !important;
+}
+
+.grid-row:hover, .frappe-list .list-row:hover {
+    background: var(--primary-light) !important;
+}
+
+/* Status Indicators */
+.indicator-pill {
+    border-radius: var(--radius-full) !important;
+    font-weight: 600 !important;
+    padding: 3px 10px !important;
+}
+
+.indicator-pill.blue { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+.indicator-pill.green { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
+.indicator-pill.orange { background: rgba(249, 115, 22, 0.2); color: #fb923c; }
+.indicator-pill.red { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+
+/* Custom Backend Theme Badge in Footer/Navbar */
+.theme-badge-accent {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background: var(--primary-light);
+    border: 1px solid var(--border-hover);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}

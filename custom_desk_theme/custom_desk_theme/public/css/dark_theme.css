@@ -1,0 +1,41 @@
+/* ==========================================================================
+   FRAPPE 16 DARK THEME ENHANCEMENTS
+   Explicit overrides when data-theme="dark" is active on <html> or <body>
+   ========================================================================== */
+
+[data-theme="dark"] {
+    --bg-color: #0b0f19;
+    --card-bg: rgba(17, 24, 39, 0.85);
+    --modal-bg: #111827;
+    --sidebar-bg: #030712;
+    --navbar-bg: rgba(11, 15, 25, 0.9);
+    
+    --text-color: #f3f4f6;
+    --text-muted: #9ca3af;
+    --border-color: rgba(255, 255, 255, 0.07);
+    --border-hover: rgba(99, 102, 241, 0.5);
+    
+    --control-bg: rgba(17, 24, 39, 0.7);
+    --control-bg-hover: rgba(31, 41, 55, 0.9);
+}
+
+/* Modal and Popover styling in dark mode */
+[data-theme="dark"] .modal-content,
+[data-theme="dark"] .popover,
+[data-theme="dark"] .dropdown-menu {
+    background-color: var(--modal-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(16px);
+}
+
+[data-theme="dark"] .dropdown-item {
+    color: var(--text-color) !important;
+    border-radius: var(--radius-sm);
+    margin: 2px 4px;
+}
+
+[data-theme="dark"] .dropdown-item:hover {
+    background-color: var(--primary-light) !important;
+    color: #ffffff !important;
+}

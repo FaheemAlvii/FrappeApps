@@ -1,0 +1,10 @@
+include MANIFEST.in
+include README.md
+include pyproject.toml
+recursive-include custom_desk_theme *.py
+recursive-include custom_desk_theme *.js
+recursive-include custom_desk_theme *.css
+recursive-include custom_desk_theme *.html
+recursive-include custom_desk_theme *.json
+recursive-include custom_desk_theme *.svg
+recursive-include custom_desk_theme *.png
