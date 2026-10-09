@@ -16,4 +16,5 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/FaheemAlvii/FrappeApps/"
+Homepage = "https://github.com/FaheemAlvii/FrappeApps"
+Repository = "https://github.com/FaheemAlvii/FrappeApps.git"

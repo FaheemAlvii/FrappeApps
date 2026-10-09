@@ -18,10 +18,10 @@ A modern Obsidian & Glassmorphism backend desk theme for Frappe v15 / v16.
 In your Bench directory (e.g. `~/frappe-bench`):
 ```bash
 # If cloned from Git repository
-bench get-app https://github.com/your-username/custom_desk_theme.git
+bench get-app https://github.com/FaheemAlvii/FrappeApps.git
 
-# Or if linking locally from e:/Projects/FrappeApps/custom_desk_theme:
-bench get-app --link e:/Projects/FrappeApps/custom_desk_theme
+# Or if linking locally:
+bench get-app --link e:/Projects/FrappeApps
 ```
 
 ### 2. Install on your Site
